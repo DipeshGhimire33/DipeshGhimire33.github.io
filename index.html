@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dipesh Ghimire | Junior ML engineer</title>
+<meta name="description" content="I turn messy, heavily missing, imbalanced data into models that can be trusted. Sepsis prediction on 1.5M ICU records, with every decision shown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  TODO before publishing:
+  1. Put your CV in this folder as Dipesh_Ghimire_CV.pdf (the Download CV buttons link to it).
+  2. Replace the final-year-project link below with your new repo URL.
+  3. Add a contact email if you want one (not added: you did not give one).
+-->
+<style>
+  :root {
+    --paper: #edf1f2;
+    --panel: #f8fafa;
+    --ink: #10262e;
+    --ink-soft: #3d555d;
+    --teal: #2b6b73;
+    --signal: #b8322a;
+    --rule: #c5d1d4;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0e1c21;
+      --panel: #142830;
+      --ink: #e6eef0;
+      --ink-soft: #a7bcc2;
+      --teal: #6fb5bd;
+      --signal: #ef7b70;
+      --rule: #2b434b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--teal); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+  .prose { max-width: 40rem; }
+
+  /* Hero */
+  .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
+  .name { font-weight: 600; margin: 0 0 1.5rem; color: var(--ink-soft); }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 5.6vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.5rem;
+    max-width: 18em;
+  }
+  .lede { font-size: 1.2rem; max-width: 36rem; color: var(--ink-soft); margin: 0 0 2rem; }
+  .button {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  .button:hover { background: var(--teal); color: var(--paper); }
+  .hero-note { margin: 1.25rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  h3 { font-family: var(--serif); font-size: 1.25rem; margin: 0 0 0.35rem; font-weight: 600; }
+  p { margin: 0 0 1rem; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.25rem 2rem; margin: 2rem 0 0; }
+  .facts div { border-top: 2px solid var(--ink); padding-top: 0.6rem; }
+  .facts dt { font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; }
+  .facts dd { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* Decision ledger: the one memorable element */
+  .ledger { margin: 2rem 0 0; padding: 0; list-style: none; }
+  .ledger li {
+    background: var(--panel);
+    border-left: 6px solid var(--rule);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .ledger li.override { border-left-color: var(--signal); }
+  .ledger li.check { border-left-color: var(--teal); }
+  .tag { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--ink-soft); }
+  .override .tag { color: var(--signal); }
+  .check .tag { color: var(--teal); }
+  .ledger p { margin: 0 0 0.6rem; }
+  .ledger p:last-child { margin-bottom: 0; }
+  .why { color: var(--ink-soft); }
+
+  /* Results table */
+  .table-scroll { overflow-x: auto; margin: 1.5rem 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 22rem; background: var(--panel); }
+  caption { text-align: left; padding: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.65rem 1rem; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.best td { font-weight: 600; }
+
+  .limits { padding-left: 1.2rem; max-width: 40rem; }
+  .limits li { margin-bottom: 0.6rem; }
+
+  .quiet { color: var(--ink-soft); }
+  .links a { margin-right: 1.25rem; }
+
+  footer { padding: 3rem 0 4rem; }
+  footer p { margin-bottom: 1.25rem; }
+
+  @media (max-width: 40rem) {
+    .hero { padding: 3rem 0 2.5rem; }
+    section { padding: 2.5rem 0; }
+    .ledger li { padding: 1rem 1.1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="name">Dipesh Ghimire, junior ML engineer (BSc CSIT)</p>
+    <h1>I turn messy, heavily missing, imbalanced data into models that can be trusted.</h1>
+    <p class="lede">I let the AI do the quick work and do the checking myself. The project below shows each place where I overrode it, checked it, or guarded against fooling myself.</p>
+    <a class="button" href="Dipesh_Ghimire_CV.pdf" download>Download CV</a>
+    <p class="hero-note">Featured project: early sepsis prediction on 1.5 million ICU records.</p>
+  </div>
+</header>
+
+<main>
+  <section id="sepsis">
+    <div class="wrap">
+      <h2>Sepsis prediction from ICU data</h2>
+      <p class="prose">A machine learning pipeline that predicts sepsis from hourly clinical readings, built on the public PhysioNet/CinC Challenge 2019 dataset. It covers exploration, cleaning, feature design, six notebooks of modelling and comparison, and a Streamlit demo app. It is an educational project, not a medical tool.</p>
+      <dl class="facts">
+        <div><dt>1,552,210 rows</dt><dd>from 40,336 ICU patients</dd></div>
+        <div><dt>1.8% positive</dt><dd>sepsis in only 1.8% of observations, so accuracy alone is useless</dd></div>
+        <div><dt>Up to 99.8% missing</dt><dd>some lab values (direct bilirubin, fibrinogen, troponin) are almost never recorded</dd></div>
+      </dl>
+      <p class="links" style="margin-top:1.75rem">
+        <a href="https://github.com/DipeshGhimire33/Intern_project">Code and notebooks</a>
+        <a href="https://github.com/DipeshGhimire33/Intern_project/tree/master/summary">Written summary of each stage</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="decisions">
+    <div class="wrap">
+      <h2>Where I made the call</h2>
+      <p class="prose">These are the decisions that mattered, in my words, with the reason for each. The red ones are where I disagreed with the AI.</p>
+      <ul class="ledger">
+        <li class="override">
+          <span class="tag">I overrode the AI</span>
+          <h3>Missing values</h3>
+          <p>The AI suggested imputing the gaps. I chose to forward-fill within each patient instead.</p>
+          <p class="why">A patient's last measured value stays theirs until a newer one replaces it, rather than being pulled toward the population median. This was a judgment call, not tested against alternatives, and the project README lists it as a limitation. Median imputation appears only in the baseline models that cannot handle gaps.</p>
+        </li>
+        <li class="check">
+          <span class="tag">I checked the AI</span>
+          <h3>Model choice</h3>
+          <p>The AI recommended a model. I tested it against four baselines on identical patient-level splits: logistic regression, random forest, histogram gradient boosting and a linear SVM.</p>
+          <p class="why">XGBoost scored highest on PR-AUC and ROC-AUC. Random forest scored slightly higher on F1 and recall, which is why I report every metric and don't pick one that flatters a single model.</p>
+        </li>
+        <li>
+          <span class="tag">Safeguard</span>
+          <h3>Splitting by patient, not by row</h3>
+          <p>70% of patients for training, 10% for validation, 20% for testing.</p>
+          <p class="why">A patient has many hourly rows. If rows from one patient land on both sides of the split, the model can recognise the patient and the score looks better than it is.</p>
+        </li>
+        <li>
+          <span class="tag">Safeguard</span>
+          <h3>Choosing the alert threshold</h3>
+          <p>I picked 0.80 using the validation set only, then applied it unchanged to the test set.</p>
+          <p class="why">Tuning the threshold on test data would quietly leak the answer into the result.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="wrap">
+      <h2>What the model actually achieves</h2>
+      <div class="table-scroll">
+        <table>
+          <caption>Held-out test set, patient-level split</caption>
+          <thead><tr><th scope="col">Model</th><th scope="col" class="num">PR-AUC</th><th scope="col" class="num">ROC-AUC</th></tr></thead>
+          <tbody>
+            <tr class="best"><th scope="row">XGBoost</th><td class="num">0.0929</td><td class="num">0.7913</td></tr>
+            <tr><th scope="row">Random forest</th><td class="num">0.0912</td><td class="num">0.7876</td></tr>
+            <tr><th scope="row">Histogram gradient boosting</th><td class="num">0.0889</td><td class="num">0.7864</td></tr>
+            <tr><th scope="row">Logistic regression</th><td class="num">0.0734</td><td class="num">0.7433</td></tr>
+            <tr><th scope="row">Linear SVM</th><td class="num">0.0715</td><td class="num">0.7440</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prose">The result is modest, and I say so. For context, a model guessing at random would score about 0.019 PR-AUC on this test set, because only about 1.9% of observations are positive.</p>
+      <h3 style="margin-top:2rem">What it can't do</h3>
+      <ul class="limits">
+        <li>At the chosen threshold it catches about a quarter of sepsis observations (recall 0.249), and roughly 1 in 7 of its alerts is correct (precision 0.136).</li>
+        <li>It has not been validated on any other hospital or population.</li>
+        <li>The reference ranges behind my engineered features are heuristic, not clinical standards.</li>
+        <li>The strongest feature was time in the ICU. That describes how the model behaves, not what causes sepsis.</li>
+        <li>It is not for diagnosis or treatment decisions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <h2>Why this site exists</h2>
+      <p class="prose">A CV and LinkedIn can list my courses and say I built a sepsis model, but they can't show where I let the AI move fast, where I slowed down to verify, and why. This site shows those decisions so a hiring lead can judge how I work before they interview me.</p>
+    </div>
+  </section>
+
+  <section id="more">
+    <div class="wrap">
+      <h2>Also built</h2>
+      <h3>Final-year web application (team of four)</h3>
+      <p class="prose">A Django web application for my BSc CSIT final-year project. I designed the page layout and navigation flow and built most of the frontend, and I handled database filling, bug fixing and integration. Bhijan Bastola set up the repository and co-developed the backend. The commit history is public, so you can check who did what.</p>
+      <p class="links"><a href="https://github.com/DipeshGhimire33">Repository (link coming)</a></p>
+
+      <h2 style="margin-top:2.5rem">Currently building</h2>
+      <p class="prose quiet">Projects on telecom and business data, to show the same approach outside medicine. Not published yet.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="prose">Looking for a junior ML engineer who checks the machine's work? Start with my CV.</p>
+    <a class="button" href="Dipesh_Ghimire_CV.pdf" download>Download CV</a>
+    <p class="links" style="margin-top:1.75rem">
+      <a href="https://github.com/DipeshGhimire33">GitHub</a>
+      <a href="https://www.linkedin.com/in/dipesh-ghimire-b00118370/">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
