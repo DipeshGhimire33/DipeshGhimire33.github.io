@@ -1,41 +1,62 @@
-# Dipesh Ghimire: portfolio
+# Dipesh Ghimire: Portfolio
 
-Live site: https://dipeshghimire33.github.io
+**Live site:** https://dipeshghimire33.github.io
 
-A single-page portfolio for a junior ML engineer role. It makes one claim and asks for one action:
+A single-page portfolio showcasing my work in machine learning, data analysis, and building reliable data-driven solutions.
 
-- **Claim:** I turn messy, heavily missing, imbalanced data into models that can be trusted.
-- **Evidence:** an early sepsis-prediction pipeline on 1.5M ICU records, with each decision (where I overrode the AI, where I checked it, where I guarded against leakage) shown next to the results and the model's limits.
-- **Action:** download my CV.
+My approach is simple: understand the data, validate the evidence, and make decisions based on what the data can actually support.
 
-## What's in this repo
+## Featured Projects
 
-| File | Purpose |
-|---|---|
-| `index.html` | The whole site: HTML and CSS in one file, no build step and no JavaScript |
-| `Dipesh_Ghimire_CV.pdf` | The CV that the Download CV buttons link to |
-| `README.md` | This file |
+### 1. Sepsis Prediction Using Machine Learning
 
-## Featured project
+An end-to-end machine learning pipeline using the public PhysioNet/CinC 2019 dataset, containing approximately 1.5 million ICU records.
 
-[Sepsis prediction using machine learning](https://github.com/DipeshGhimire33/Intern_project): patient-level splits, patient-wise forward filling, five models compared on a held-out test set, and a Streamlit demo app. It is an educational project and not a medical tool.
+* **Data challenges:** Highly missing values and imbalanced classes.
+* **Models compared:** XGBoost, Random Forest, Histogram Gradient Boosting, Logistic Regression, and Linear SVM.
+* **Best test result:** XGBoost achieved a PR-AUC of 0.093 and ROC-AUC of 0.791.
+* **Key decisions:** Patient-level data splitting, patient-wise forward filling, model comparison, and validation-based threshold selection.
+* **Transparency:** Documented model limitations, performance trade-offs, and potential risks of interpretation.
+* **Code:** [Intern_project](https://github.com/DipeshGhimire33/Intern_project)
+* **Demo:** Streamlit application.
 
-## Editing the site
+*Educational project only; not intended for clinical use.*
 
-1. Open `index.html` on GitHub and click the pencil icon, or edit it in a Codespace.
-2. Change the text, then commit.
-3. GitHub Pages republishes within a minute or two.
+### 2. Nepal Cybercrime Data Analysis
 
-To replace the CV, upload a new PDF with the same filename, `Dipesh_Ghimire_CV.pdf`.
+An exploratory data analysis project investigating reported cybercrime trends in Nepal using aggregate data collected and consolidated from multiple sources.
 
-## Previewing locally
+* **Data collection:** Worked with cybercrime reporting, cybercrime medium, victim-group, population, and literacy datasets.
+* **Data preparation:** Cleaned and standardized inconsistent labels, reporting categories, and data structures.
+* **Feature engineering:** Created year-over-year comparisons, cybercrime medium categories, and province-level analytical features.
+* **Analysis:** Examined reporting trends across fiscal years 2022/23–2024/25, cybercrime mediums, victim groups, and provinces.
+* **Data validation:** Compared totals across datasets and identified a five-case discrepancy in the 2022/23 victim-group data.
+* **Analytical judgment:** Evaluated machine learning feasibility and avoided forcing predictive models onto limited aggregate data.
+* **Tools:** Python, Pandas, NumPy, Jupyter Notebook, and Streamlit.
+* **Code:** [Nepal Cybercrime Analysis](YOUR_CYBERCRIME_GITHUB_REPOSITORY_URL)
+* **Live demo:** Coming soon.
 
-Open `index.html` in a browser. Fonts load from Google Fonts, so without internet the page falls back to system fonts.
+This project strengthened my understanding of multi-source data collection, data quality, validation, and the importance of selecting analytical methods that fit the available evidence.
 
-## Hosting
+## What's in This Repository
 
-Served by GitHub Pages from the `main` branch, root folder (Settings → Pages). The repo name must stay `DipeshGhimire33.github.io` for the URL to work.
+| File                    | Purpose                                                |
+| ----------------------- | ------------------------------------------------------ |
+| `index.html`            | The portfolio website, with HTML and CSS in one file   |
+| `Dipesh_Ghimire_CV.pdf` | The CV linked from the portfolio's Download CV buttons |
+| `README.md`             | Project documentation                                  |
+
+The website uses a simple structure without a build step or JavaScript.
+
+## Technical Skills
+
+* **Programming:** Python
+* **Data analysis:** Pandas, NumPy, Jupyter Notebook
+* **Machine learning:** Scikit-learn, XGBoost
+* **Visualization and deployment:** Streamlit
+* **Web development:** Django, HTML, CSS
+* **Tools:** Git, GitHub
 
 ## Contact
 
-[GitHub](https://github.com/DipeshGhimire33) · [LinkedIn](https://www.linkedin.com/in/dipesh-ghimire-b00118370/)
+[GitHub](https://github.com/DipeshGhimire33) · [LinkedIn](https://www.linkedin.com/in/dipesh-ghimire-b00118370/) · [Portfolio](https://dipeshghimire33.github.io)
